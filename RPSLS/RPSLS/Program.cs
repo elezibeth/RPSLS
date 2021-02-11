@@ -10,6 +10,17 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
+
+            Human me = new Human();
+            me.IncrementRoundWinCounter();
+            me.DisplayRoundWinCount();
+            me.IncrementRoundWinCounter();
+            me.DisplayRoundWinCount();
+            me.IncrementTurnWinCounter();
+            me.IncrementTurnWinCounter();
+            me.DisplayTurnWinCount();
+
+            Console.ReadLine();
         }
     }
 }
