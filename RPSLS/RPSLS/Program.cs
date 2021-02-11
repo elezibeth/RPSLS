@@ -19,6 +19,13 @@ namespace RPSLS
             me.IncrementTurnWinCounter();
             me.IncrementTurnWinCounter();
             me.DisplayTurnWinCount();
+            me.ResetRoundWinCounter();
+            me.ResetTurnWinCounter();
+            me.DisplayTurnWinCount();
+            me.DisplayRoundWinCount();
+            GamePlay newGame = new GamePlay();
+            newGame.PlayGame();
+            Console.WriteLine(newGame.roundsRemaining + "rounds remaining.");
 
             Console.ReadLine();
         }
