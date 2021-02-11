@@ -12,12 +12,16 @@ namespace RPSLS
         public int roundsRemaining;
         
         int turnsRemaining;
+        public Player playerOne;
+        public Player playerTwo;
+        string players;
+        
 
         //constructor
         public GamePlay()
         {
             
-            roundsRemaining = 3;
+            roundsRemaining = 1;
             turnsRemaining = 3;
         }
 
@@ -46,10 +50,54 @@ namespace RPSLS
             }
             
                
-               
+           
             
             
             
         }
+
+
+        public void InstantiatePlayers()
+        {
+            Console.WriteLine("How many people are playing? choose '1' or '2' and press enter");
+            players = (Console.ReadLine());
+
+            if (players == "1")
+            {
+                //initialize one AI and one Human player
+                Console.WriteLine("Please enter your name");
+                string userEntry1 = Console.ReadLine();
+                playerOne = new Human(userEntry1);
+                Console.WriteLine("Please name the computer player");
+                string userEntry2 = Console.ReadLine();
+                playerTwo = new AI(userEntry2);
+
+
+            }
+            if (players == "2")
+            {
+                Console.WriteLine("Please enter your name");
+                string userEntry1 = Console.ReadLine();
+                playerOne = new Human(userEntry1);
+
+                Console.WriteLine("Please enter your name");
+                string userEntry = Console.ReadLine();
+                playerTwo = new Human(userEntry);
+
+            }
+            else
+            {
+                Console.WriteLine("Please only choose 1 or 2 players");
+                InstantiatePlayers();
+            }      
+
+        }
+
+        public void PlayersSelectItems()
+        {
+
+        }
     }
+        
+    
 }

@@ -8,5 +8,25 @@ namespace RPSLS
 {
     class AI : Player
     {
+        //member variables
+        
+
+
+
+        //ctor
+        public AI(string name)
+            :base(name)
+        {
+            this.name = name;
+
+        }
+
+
+        //methods
+
+
+
+
+
     }
 }

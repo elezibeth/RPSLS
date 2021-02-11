@@ -14,13 +14,19 @@ namespace RPSLS
 
         //ctor
 
-        public Human()
+        public Human(string name)
+            :base(name)
         {
-            
 
+
+            Console.WriteLine("you made a human player");
         }
 
         //methods
+
+        
+
+        //chose item with console
 
 
 

@@ -10,13 +10,15 @@ namespace RPSLS
     {
         int turnWinCounter;
         int RoundWinCounter;
+        public string name;
 
         //ctor
 
-        public Player()
+        public Player(string name)
         {
             turnWinCounter = 0;
             RoundWinCounter = 0;
+            this.name = name;
         }
 
         //methods
