@@ -10,7 +10,7 @@ namespace RPSLS
     {
         int turnWinCounter;
         int RoundWinCounter;
-        public string name;
+        public string playerName;
         public List<Item> turnChoice;
         public Item spok;
         public Item rock;
@@ -19,14 +19,15 @@ namespace RPSLS
         public Item scisors;
         public Item lizard;
         List<Item> playerListOfItems;
+        
 
         //ctor
 
-        public Player(string name)
+        public Player(string playerName)
         {
             turnWinCounter = 0;
             RoundWinCounter = 0;
-            this.name = name;
+            this.playerName = playerName;
             turnChoice = new List<Item>();
             InstantiateItemsInPlayer();
            
@@ -37,11 +38,11 @@ namespace RPSLS
         //methods
         public void InstantiateItemsInPlayer()
         {
-            lizard = new Item();
-            spok = new Item();
-            rock = new Item();
-            paper = new Item();
-            scisors = new Item();
+            lizard = new Item("lizard");
+            spok = new Item("spok");
+            rock = new Item("rock");
+            paper = new Item("paper");
+            scisors = new Item("scisors");
         }
         
       

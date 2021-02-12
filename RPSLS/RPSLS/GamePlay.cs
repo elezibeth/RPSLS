@@ -18,10 +18,11 @@ namespace RPSLS
         Item spok;
         Item rock;
         Item paper;
-        Item scisors;
+        Item scissors;
         Item lizard;
         public int playerOneInt;
         public int playerTwoInt;
+        public string name;
         
         
 
@@ -42,11 +43,11 @@ namespace RPSLS
         //methods
         public void InstantiateItemsInGame()
         {
-            lizard = new Item();
-            spok = new Item();
-            rock = new Item();
-            paper = new Item();
-            scisors = new Item();
+            lizard = new Item("lizard");
+            spok = new Item("spok");
+            rock = new Item("rock");
+            paper = new Item("paper");
+            scissors = new Item("scissors");
         }
 
         public void PlayGame()
@@ -129,36 +130,16 @@ namespace RPSLS
             Console.WriteLine("Player one, pleace choose an item from the list. choose 1 for spok, 2 for lizard, 3 for rock, 4 for paper, or 5 for scissors.");
             string input = (Console.ReadLine());
             playerOneInt = Convert.ToInt16(input);
-
-
-
-
-            //choose item
             ChooseItemForPlayerOne();
-
-
-            //add item to player one item list
             Console.WriteLine("Player one, pleace choose an item from the list. choose 1 for spok, 2 for lizard, 3 for rock, 4 for paper, or 5 for scissors. ");
             string input2 = (Console.ReadLine());
             playerTwoInt = Convert.ToInt16(input2);
             ChooseItemForPlayerTwo();
-
-
-
-
-
-
-            Console.WriteLine("Player one, pleace choose an item from the list.");
-            
-
-            //choose item
-
-            //AddItemtoturnchoicelist
-
-            
-
-
             //use random generator to choose in ai class
+            foreach (Item x in playerOne.turnChoice)
+            {
+                Console.WriteLine(x.name);
+            }
 
 
             //compare Items in player one turn list and player 2 turn list
@@ -191,13 +172,13 @@ namespace RPSLS
             }
             if (playerOneInt == 5)
             {
-                playerOne.turnChoice.Add(scisors);
+                playerOne.turnChoice.Add(scissors);
                
             }
             if(playerOneInt != 1 && playerOneInt != 2 && playerOneInt != 3 && playerOneInt != 4 && playerOneInt != 5)
             {
                 Console.WriteLine("scisors will be player one's choice.");
-                playerOne.turnChoice.Add(scisors);
+                playerOne.turnChoice.Add(scissors);
             }
         }
 
@@ -223,7 +204,7 @@ namespace RPSLS
             }
             if (playerTwoInt == 5)
             {
-                playerTwo.turnChoice.Add(scisors);
+                playerTwo.turnChoice.Add(scissors);
 
             }
             if (playerTwoInt != 1 && playerTwoInt != 2 && playerTwoInt != 3 && playerTwoInt != 4 && playerTwoInt != 5)
@@ -232,6 +213,13 @@ namespace RPSLS
                 Console.WriteLine("paper will be  player two's choice");
             }
         }
+
+        // new method, 
+        //compare items at playerOne.list[0] and playertwo.list[0], 
+        // make variable to hold bool statuses for player one and player 2,
+        //for true, increase point counter in player class
+
+
 
 
     }

@@ -14,10 +14,10 @@ namespace RPSLS
 
 
         //ctor
-        public AI(string name)
-            :base(name)
+        public AI(string playerName)
+            :base(playerName)
         {
-            this.name = name;
+            this.playerName = playerName;
 
         }
 

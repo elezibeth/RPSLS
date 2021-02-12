@@ -23,7 +23,7 @@ namespace RPSLS
             newGame.InstantiatePlayers();
             newGame.PlayGame();
             newGame.ReturnPlayerScores();
-            Console.WriteLine("player one name:" + newGame.playerOne.name + " pplayer two name: " + newGame.playerTwo.name);
+            Console.WriteLine("player one name:" + newGame.playerOne.playerName + " pplayer two name: " + newGame.playerTwo.playerName);
             Console.WriteLine(newGame.roundsRemaining + "rounds remaining.");
 
             Console.ReadLine();

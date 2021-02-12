@@ -10,12 +10,13 @@ namespace RPSLS
     {
 
         //member variables
+        public string playerName;
 
 
         //ctor
 
-        public Human(string name)
-            :base(name)
+        public Human(string playerName)
+            :base(playerName)
         {
 
 

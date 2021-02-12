@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Rock : Item
+    class Rock 
     {
 
         //variables
