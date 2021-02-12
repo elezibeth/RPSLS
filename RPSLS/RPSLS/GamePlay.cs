@@ -110,7 +110,7 @@ namespace RPSLS
                 playerTwo = new Human(userEntry);
 
             }
-            if(players1 == 1 && players1 == 2)
+            if(players1 != 1 && players1 != 2)
             {
                 Console.WriteLine("Please only choose 1 or 2 players");
                 InstantiatePlayers();
@@ -144,20 +144,9 @@ namespace RPSLS
             {
                 Console.WriteLine(x.name + " is the choice of player 2.");
             }
-
-
-            //compare Items in player one turn list and player 2 turn list
             ScorePlayers();
-         
-         
-
-            //remove items from player one turn choice list
             playerOne.turnChoice.RemoveAt(0);
             playerTwo.turnChoice.RemoveAt(0);
-
-
-            //remove items from player 2 turn choice list
-
         }
         public void ChooseItemForPlayerOne()
         {
