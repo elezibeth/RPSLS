@@ -131,22 +131,30 @@ namespace RPSLS
             string input = (Console.ReadLine());
             playerOneInt = Convert.ToInt16(input);
             ChooseItemForPlayerOne();
-            Console.WriteLine("Player one, pleace choose an item from the list. choose 1 for spok, 2 for lizard, 3 for rock, 4 for paper, or 5 for scissors. ");
+            Console.WriteLine("Player two, pleace choose an item from the list. choose 1 for spok, 2 for lizard, 3 for rock, 4 for paper, or 5 for scissors. ");
             string input2 = (Console.ReadLine());
             playerTwoInt = Convert.ToInt16(input2);
             ChooseItemForPlayerTwo();
             //use random generator to choose in ai class
             foreach (Item x in playerOne.turnChoice)
             {
-                Console.WriteLine(x.name);
+                Console.WriteLine(x.name + " is the choice of player one.");
+            }
+            foreach (Item x in playerTwo.turnChoice)
+            {
+                Console.WriteLine(x.name + " is the choice of player 2.");
             }
 
 
             //compare Items in player one turn list and player 2 turn list
-            // -------- return bool value for winner
-            ///-----------increment win counter in player classes
+            ScorePlayers();
+         
+         
 
             //remove items from player one turn choice list
+            playerOne.turnChoice.RemoveAt(0);
+            playerTwo.turnChoice.RemoveAt(0);
+
 
             //remove items from player 2 turn choice list
 
@@ -216,6 +224,271 @@ namespace RPSLS
 
         // new method, 
         //compare items at playerOne.list[0] and playertwo.list[0], 
+
+        public void ScorePlayers()
+        {
+            
+
+            string playerUno = playerOne.turnChoice[0].name;
+            string playerDos = playerTwo.turnChoice[0].name;
+            Console.WriteLine(playerUno);
+            Console.WriteLine(playerDos);
+
+
+            //            Rock crushes Scissors
+
+            switch (playerUno)
+            {
+                case "scissors":
+                    if(playerDos == "rock")
+                    {
+                        Console.WriteLine("rock crushes scissors");
+                        playerTwo.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "paper")
+                    {
+                        Console.WriteLine("Scissors cut paper");
+                        playerOne.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "scisors")
+                    {
+                        Console.WriteLine("Scissors cut paper");
+                        playerOne.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "lizard")
+                    {
+                        Console.WriteLine("Scissors decapitate lizard");
+                        playerTwo.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "spok")
+                    {
+                        Console.WriteLine("Spok smashes scissors");
+                        playerTwo.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                case "paper":
+                    if (playerDos == "rock")
+                    {
+                        Console.WriteLine("Paper Covers Rock");
+                        playerOne.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "paper")
+                    {
+                        Console.WriteLine("Try again");
+                        turnsRemaining++;
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "scisors")
+                    {
+                        Console.WriteLine("Scissors cut paper");
+                        playerTwo.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "lizard")
+                    {
+                        Console.WriteLine("Lizard eats paper");
+                        playerTwo.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "spok")
+                    {
+                        Console.WriteLine("Paper disproves Spok");
+                        playerOne.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                case "rock":
+                    if (playerDos == "rock")
+                    {
+                        Console.WriteLine("try again");
+                        turnsRemaining++;
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "paper")
+                    {
+                        Console.WriteLine("Papaer covers rock");
+                        playerTwo.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "scisors")
+                    {
+                        Console.WriteLine("Rock smashes scissors ");
+                        playerOne.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "lizard")
+                    {
+                        Console.WriteLine("Rock crushes lizard");
+                        playerOne.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "spok")
+                    {
+                        Console.WriteLine("Spok vaporizes rock");
+                        playerTwo.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+
+                case "lizard":
+                    if (playerDos == "rock")
+                    {
+                        Console.WriteLine("Rock crushes lizard");
+                        playerTwo.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "paper")
+                    {
+                        Console.WriteLine("Lizard eats paper");
+                        playerOne.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "scisors")
+                    {
+                        Console.WriteLine("Scissors decapitate lizard");
+                        playerTwo.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "lizard")
+                    {
+                        Console.WriteLine("Try again");
+                        turnsRemaining++;
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "spok")
+                    {
+                        Console.WriteLine("Lizard poisons Spok");
+                        playerOne.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+
+                case "spok":
+                    if (playerDos == "rock")
+                    {
+                        Console.WriteLine("Spok vaporizes Rock");
+                        playerOne.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "paper")
+                    {
+                        Console.WriteLine("Paper disproves Spok");
+                        playerOne.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "scisors")
+                    {
+                        Console.WriteLine("Spok smashes scisors");
+                        playerOne.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "lizard")
+                    {
+                        Console.WriteLine("lizard poisons spok");
+                        playerTwo.IncrementTurnWinCounter();
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+                    if (playerDos == "spok")
+                    {
+                        Console.WriteLine("Try Again");
+                        turnsRemaining++;
+                        playerOne.DisplayTurnWinCount();
+                        playerTwo.DisplayTurnWinCount();
+                    }
+                    break;
+
+               
+
+
+            }
+
+            
+            //Scissors cuts Paper
+            //Paper covers Rock
+            //Rock crushes Lizard
+            //Lizard poisons Spock
+            //Spock smashes Scissors
+            //Scissors decapitates Lizard
+            //Lizard eats Paper
+            //Paper disproves Spock
+            //Spock vaporizes Rock
+
+            //            Rock crushes Scissors
+            //Scissors cuts Paper
+            //Paper covers Rock
+            //Rock crushes Lizard
+            //Lizard poisons Spock
+            //Spock smashes Scissors
+            //Scissors decapitates Lizard
+            //Lizard eats Paper
+            //Paper disproves Spock
+            //Spock vaporizes Rock
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
         // make variable to hold bool statuses for player one and player 2,
         //for true, increase point counter in player class
 

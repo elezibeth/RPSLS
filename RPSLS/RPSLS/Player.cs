@@ -73,7 +73,7 @@ namespace RPSLS
 
         public void DisplayTurnWinCount()
         {
-            Console.WriteLine(turnWinCounter);
+            Console.WriteLine("this player's turn win count is: " + turnWinCounter);
         }
         public void AddItemToTurnChoiceList(Item item)
         {
