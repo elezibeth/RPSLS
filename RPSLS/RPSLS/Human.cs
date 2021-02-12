@@ -24,6 +24,9 @@ namespace RPSLS
 
         //methods
 
+        //chooseitemfromlist
+       
+
         
 
         //chose item with console

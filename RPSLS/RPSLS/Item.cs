@@ -9,6 +9,28 @@ namespace RPSLS
     class Item
     {
 
-      
+        //variables
+        Item rock;
+        Item paper;
+        Item scisors;
+        Item lizard;
+        Item spok;
+        public List<Item> itemList;
+
+        //ctor
+        public Item()
+        {
+            
+            itemList = new List<Item>();
+            
+
+
+        }
+
+        // methods
+
+         
+
+        
     }
 }
