@@ -127,13 +127,13 @@ namespace RPSLS
         public void PlayersTurns()
         {
             //new list in player class for chosen item
-            Console.WriteLine("Player one, pleace choose an item from the list. choose 1 for spok, 2 for lizard, 3 for rock, 4 for paper, or 5 for scissors.");
+            Console.WriteLine("Player one, pleace choose an item from the list. choose 1 for spok, 2 for lizard, 3 for rock, 4 for paper, or 5 for scissors, or any other number for spok.");
             string input = (Console.ReadLine());
-            playerOneInt = Convert.ToInt16(input);
+            playerOneInt = Convert.ToInt32(input);
             ChooseItemForPlayerOne();
-            Console.WriteLine("Player two, pleace choose an item from the list. choose 1 for spok, 2 for lizard, 3 for rock, 4 for paper, or 5 for scissors. ");
+            Console.WriteLine("Player two, pleace choose an item from the list. choose 1 for spok, 2 for lizard, 3 for rock, 4 for paper, or 5 for scissors. any other entry will be spok. ");
             string input2 = (Console.ReadLine());
-            playerTwoInt = Convert.ToInt16(input2);
+            playerTwoInt = Convert.ToInt32(input2);
             ChooseItemForPlayerTwo();
             //use random generator to choose in ai class
             foreach (Item x in playerOne.turnChoice)
@@ -150,32 +150,32 @@ namespace RPSLS
         }
         public void ChooseItemForPlayerOne()
         {
-            if (playerOneInt == 1)
+            if(playerOneInt == 1)
             {
-                playerOne.turnChoice.Add(spok);
+                playerOne.turnChoice.Add(playerOne.spok);
                 Console.WriteLine(playerOne.turnChoice.Count());
             }
-            if (playerOneInt == 2)
+            if(playerOneInt == 2)
             {
-                playerOne.turnChoice.Add(lizard);
+                playerOne.turnChoice.Add(playerOne.lizard);
             }
-            if (playerOneInt == 3)
+            if(playerOneInt == 3)
             {
-                playerOne.turnChoice.Add(rock);
+                playerOne.turnChoice.Add(playerOne.rock);
             }
-            if (playerOneInt == 4)
+            if(playerOneInt == 4)
             {
-                playerOne.turnChoice.Add(paper);
+                playerOne.turnChoice.Add(playerOne.paper);
             }
-            if (playerOneInt == 5)
+            if(playerOneInt == 5)
             {
                 playerOne.turnChoice.Add(scissors);
                
             }
             if(playerOneInt != 1 && playerOneInt != 2 && playerOneInt != 3 && playerOneInt != 4 && playerOneInt != 5)
             {
-                Console.WriteLine("scisors will be player one's choice.");
-                playerOne.turnChoice.Add(scissors);
+                Console.WriteLine("Spok will be player one's choice.");
+                playerOne.turnChoice.Add(playerOne.scisors);
             }
         }
 
@@ -189,25 +189,25 @@ namespace RPSLS
             }
             if (playerTwoInt == 2)
             {
-                playerTwo.turnChoice.Add(lizard);
+                playerTwo.turnChoice.Add(playerTwo.lizard);
             }
             if (playerTwoInt == 3)
             {
-                playerTwo.turnChoice.Add(rock);
+                playerTwo.turnChoice.Add(playerTwo.rock);
             }
             if (playerTwoInt == 4)
             {
-                playerTwo.turnChoice.Add(paper);
+                playerTwo.turnChoice.Add(playerTwo.paper);
             }
             if (playerTwoInt == 5)
             {
-                playerTwo.turnChoice.Add(scissors);
+                playerTwo.turnChoice.Add(playerTwo.scisors);
 
             }
             if (playerTwoInt != 1 && playerTwoInt != 2 && playerTwoInt != 3 && playerTwoInt != 4 && playerTwoInt != 5)
             {
-                playerTwo.turnChoice.Add(paper);
-                Console.WriteLine("paper will be  player two's choice");
+                playerTwo.turnChoice.Add(playerTwo.spok);
+                Console.WriteLine("Spok will be  player two's choice");
             }
         }
 
@@ -229,45 +229,46 @@ namespace RPSLS
             switch (playerUno)
             {
                 case "scissors":
-                    if(playerDos == "rock")
-                    {
-                        Console.WriteLine("rock crushes scissors");
-                        playerTwo.IncrementTurnWinCounter();
-                        playerOne.DisplayTurnWinCount();
-                        playerTwo.DisplayTurnWinCount();
-                    }
-                    break;
-                    if (playerDos == "paper")
-                    {
-                        Console.WriteLine("Scissors cut paper");
-                        playerOne.IncrementTurnWinCounter();
-                        playerOne.DisplayTurnWinCount();
-                        playerTwo.DisplayTurnWinCount();
-                    }
-                    break;
-                    if (playerDos == "scisors")
-                    {
-                        Console.WriteLine("Scissors cut paper");
-                        playerOne.IncrementTurnWinCounter();
-                        playerOne.DisplayTurnWinCount();
-                        playerTwo.DisplayTurnWinCount();
-                    }
-                    break;
-                    if (playerDos == "lizard")
-                    {
-                        Console.WriteLine("Scissors decapitate lizard");
-                        playerTwo.IncrementTurnWinCounter();
-                        playerOne.DisplayTurnWinCount();
-                        playerTwo.DisplayTurnWinCount();
-                    }
-                    break;
-                    if (playerDos == "spok")
-                    {
-                        Console.WriteLine("Spok smashes scissors");
-                        playerTwo.IncrementTurnWinCounter();
-                        playerOne.DisplayTurnWinCount();
-                        playerTwo.DisplayTurnWinCount();
-                    }
+                    //switch (playerDos)
+                    //    case "rock":
+                    
+                    //    Console.WriteLine("rock crushes scissors");
+                    //    playerTwo.IncrementTurnWinCounter();
+                    //    playerOne.DisplayTurnWinCount();
+                    //    playerTwo.DisplayTurnWinCount();
+
+
+                    //case "paper":
+                    
+                    //    Console.WriteLine("Scissors cut paper");
+                    //    playerOne.IncrementTurnWinCounter();
+                    //    playerOne.DisplayTurnWinCount();
+                    //    playerTwo.DisplayTurnWinCount();
+
+
+                    //case "scisors":
+                    
+                    //    Console.WriteLine("Scissors cut paper");
+                    //    playerOne.IncrementTurnWinCounter();
+                    //    playerOne.DisplayTurnWinCount();
+                    //    playerTwo.DisplayTurnWinCount();
+                    
+                    
+                    //case "lizard"
+                    
+                    //    Console.WriteLine("Scissors decapitate lizard");
+                    //    playerTwo.IncrementTurnWinCounter();
+                    //    playerOne.DisplayTurnWinCount();
+                    //    playerTwo.DisplayTurnWinCount();
+                    
+                    
+                    //if (playerDos == "spok")
+                    //{
+                    //    Console.WriteLine("Spok smashes scissors");
+                    //    playerTwo.IncrementTurnWinCounter();
+                    //    playerOne.DisplayTurnWinCount();
+                    //    playerTwo.DisplayTurnWinCount();
+                    //}
                     break;
                 case "paper":
                     if (playerDos == "rock")
@@ -310,8 +311,9 @@ namespace RPSLS
                         playerTwo.DisplayTurnWinCount();
                     }
                     break;
+
                 case "rock":
-                    if (playerDos == "rock")
+                    if(playerDos == "rock")
                     {
                         Console.WriteLine("try again");
                         turnsRemaining++;
@@ -353,39 +355,35 @@ namespace RPSLS
                     break;
 
                 case "lizard":
-                    if (playerDos == "rock")
+                    if(playerDos == "rock")
                     {
                         Console.WriteLine("Rock crushes lizard");
                         playerTwo.IncrementTurnWinCounter();
                         playerOne.DisplayTurnWinCount();
                         playerTwo.DisplayTurnWinCount();
                     }
-                    break;
-                    if (playerDos == "paper")
+                    else  if(playerDos == "paper")
                     {
                         Console.WriteLine("Lizard eats paper");
                         playerOne.IncrementTurnWinCounter();
                         playerOne.DisplayTurnWinCount();
                         playerTwo.DisplayTurnWinCount();
                     }
-                    break;
-                    if (playerDos == "scisors")
+                    else if(playerDos == "scisors")
                     {
                         Console.WriteLine("Scissors decapitate lizard");
                         playerTwo.IncrementTurnWinCounter();
                         playerOne.DisplayTurnWinCount();
                         playerTwo.DisplayTurnWinCount();
                     }
-                    break;
-                    if (playerDos == "lizard")
+                    else if(playerDos == "lizard")
                     {
                         Console.WriteLine("Try again");
                         turnsRemaining++;
                         playerOne.DisplayTurnWinCount();
                         playerTwo.DisplayTurnWinCount();
                     }
-                    break;
-                    if (playerDos == "spok")
+                    else if(playerDos == "spok")
                     {
                         Console.WriteLine("Lizard poisons Spok");
                         playerOne.IncrementTurnWinCounter();
@@ -395,7 +393,7 @@ namespace RPSLS
                     break;
 
                 case "spok":
-                    if (playerDos == "rock")
+                    if(playerDos == "rock")
                     {
                         Console.WriteLine("Spok vaporizes Rock");
                         playerOne.IncrementTurnWinCounter();
@@ -403,7 +401,7 @@ namespace RPSLS
                         playerTwo.DisplayTurnWinCount();
                     }
                     break;
-                    if (playerDos == "paper")
+                    if(playerDos == "paper")
                     {
                         Console.WriteLine("Paper disproves Spok");
                         playerOne.IncrementTurnWinCounter();
@@ -411,7 +409,7 @@ namespace RPSLS
                         playerTwo.DisplayTurnWinCount();
                     }
                     break;
-                    if (playerDos == "scisors")
+                    if(playerDos == "scisors")
                     {
                         Console.WriteLine("Spok smashes scisors");
                         playerOne.IncrementTurnWinCounter();
@@ -419,7 +417,7 @@ namespace RPSLS
                         playerTwo.DisplayTurnWinCount();
                     }
                     break;
-                    if (playerDos == "lizard")
+                    if(playerDos == "lizard")
                     {
                         Console.WriteLine("lizard poisons spok");
                         playerTwo.IncrementTurnWinCounter();
@@ -427,7 +425,7 @@ namespace RPSLS
                         playerTwo.DisplayTurnWinCount();
                     }
                     break;
-                    if (playerDos == "spok")
+                    if(playerDos == "spok")
                     {
                         Console.WriteLine("Try Again");
                         turnsRemaining++;

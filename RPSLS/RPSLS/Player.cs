@@ -49,6 +49,7 @@ namespace RPSLS
         public void IncrementTurnWinCounter()
         {
             turnWinCounter += 1;
+            Console.WriteLine(turnWinCounter);
         }
 
         public void IncrementRoundWinCounter()
