@@ -323,11 +323,13 @@ namespace RPSLS
             {
                 Console.WriteLine($"{playerOne.playerName} wins!");
                 playerOne.RoundWinCounter += 1;
+                PlayAgain();
             }
             else if(playerTwo.turnWinCounter >= 3 && playerOne.turnWinCounter <= 3)
             {
                 Console.WriteLine($"{playerTwo.playerName} wins!");
                 playerTwo.RoundWinCounter += 1;
+                PlayAgain();
 
             }
             else
@@ -335,6 +337,31 @@ namespace RPSLS
                 PlayersTurns();
             }
         }
+        public void PlayAgain()
+        {
+            Console.WriteLine("Would you like to play again? Type '1' for yes and '2' for no, then press enter.");
+            string playAgainInput = Console.ReadLine();
+            switch (playAgainInput)
+            {
+                case "1":
+                    playerOne.turnWinCounter = 0;
+                    playerTwo.turnWinCounter = 0;
+                    PlayersTurns();
+                    break;
+                case "2":
+                    Console.WriteLine("OK.");
+                    break;
+                default:
+                    Console.WriteLine("Not a valid entry");
+                    PlayAgain();
+                    break;
+
+                    
+                    
+
+            }
+        }
+       
        
             
                 
