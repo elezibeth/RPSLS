@@ -28,7 +28,7 @@ namespace RPSLS
         {
             
             roundsRemaining = 1;
-            turnsRemaining = 3;
+            
             //InstantiateItemsInGame();
             
             
@@ -63,7 +63,11 @@ namespace RPSLS
                 Console.WriteLine("try again.");
                 VerifyPlayerInput();
             }
-            players1 = Convert.ToInt16(players);
+            else
+            {
+                players1 = Convert.ToInt16(players);
+            }
+           
 
         }
 
@@ -146,7 +150,7 @@ namespace RPSLS
             switch (playerOne.turnChoice[0].name)
             {
                 case "lizard":
-                    Console.WriteLine("case statement works");
+                    
                     switch (playerTwo.turnChoice[0].name)
                     {
                         case "lizard":
@@ -178,7 +182,7 @@ namespace RPSLS
 
                     break;
                 case "rock":
-                    Console.WriteLine("case statement works");
+                    
                     switch (playerTwo.turnChoice[0].name)
                     {
                         case "lizard":
@@ -209,7 +213,7 @@ namespace RPSLS
                   
                     break;
                 case "paper":
-                    Console.WriteLine("case statement works");
+                    
                     switch (playerTwo.turnChoice[0].name)
                     {
                         case "lizard":
@@ -240,7 +244,7 @@ namespace RPSLS
                    
                     break;
                 case "scisors":
-                    Console.WriteLine("case statement works");
+                    
                     switch (playerTwo.turnChoice[0].name)
                     {
                         case "lizard":
@@ -271,7 +275,7 @@ namespace RPSLS
                     }
                     break;
                 case "spok":
-                    Console.WriteLine("case statement works");
+                    
                     switch (playerTwo.turnChoice[0].name)
                     {
                         case "lizard":
