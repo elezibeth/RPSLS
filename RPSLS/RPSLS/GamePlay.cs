@@ -51,34 +51,39 @@ namespace RPSLS
         //    scissors = new Item("scissors");
         //}
 
-        public void PlayGame()//rewrite
+        public void PlayGame()
         {
-            while (roundsRemaining >= 1)
-            {
-                while (turnsRemaining > 0)
-                {
-                    //play another round
+            PlayersTurns();
+        }
+        //rewrite
+        
+
+            //while (roundsRemaining >= 1)
+            //{
+            //    while (turnsRemaining > 0)
+            //    {
+            //        //play another round
 
 
-                    Console.WriteLine(turnsRemaining + " turns remaining");
-                    PlayersTurns();
-                    turnsRemaining--;
-                    Console.WriteLine(turnsRemaining + " turnsRemaining");
+            //        Console.WriteLine(turnsRemaining + " turns remaining");
+             //PlayersTurns();
+            //        turnsRemaining--;
+            //        Console.WriteLine(turnsRemaining + " turnsRemaining");
 
 
-                }
-                turnsRemaining = 3;
-                roundsRemaining = roundsRemaining - 1;
-                Console.WriteLine(roundsRemaining + "rounds remaining");
+            //    }
+            //    turnsRemaining = 3;
+            //    roundsRemaining = roundsRemaining - 1;
+            //    Console.WriteLine(roundsRemaining + "rounds remaining");
 
-            }
+        
             
                
            
             
             
             
-        }
+        
         public void VerifyPlayerInput()
         {
             Console.WriteLine("How many people are playing? choose '1' or '2' and press enter");
@@ -131,9 +136,8 @@ namespace RPSLS
         }
         public void ReturnPlayerScores()
         {
-            Console.WriteLine("Player one and player two win counts so far");
-            Console.WriteLine(playerOne.turnWinCounter);
-            Console.WriteLine(playerTwo.turnWinCounter);
+            Console.WriteLine("Player one score: " + playerOne.turnWinCounter + " player two score: " + playerTwo.turnWinCounter);
+          
         }
 
         public void PlayersTurns()
@@ -151,18 +155,15 @@ namespace RPSLS
 
             playerOne.MakeGesture();
             playerTwo.MakeGesture();
-            foreach (Item x in playerOne.turnChoice)
-            {
-                Console.WriteLine(x.name + " is the choice of player one.");
-            }
-            foreach (Item x in playerTwo.turnChoice)
-            {
-                Console.WriteLine(x.name + " is the choice of player 2.");
-            }
+            DisplayTurnChoices();
             //ScorePlayers();
             ScorePlayers();
-            playerOne.turnChoice.RemoveAt(0);
-            playerTwo.turnChoice.RemoveAt(0);
+            
+            
+        }
+
+        public void DisplayTurnChoices()
+        {
             foreach (Item x in playerOne.turnChoice)
             {
                 Console.WriteLine(x.name + " is the choice of player one.");
@@ -182,9 +183,66 @@ namespace RPSLS
             {
                 case "lizard":
                     Console.WriteLine("case statement works");
+                    switch (playerTwo.turnChoice[0].name)
+                    {
+                        case "lizard":
+                            Console.WriteLine("try again");
+                            
+                            playerOne.turnChoice.Remove(playerOne.turnChoice[0]);
+                            playerTwo.turnChoice.Remove(playerTwo.turnChoice[0]);
+                           
+                            break;
+                        case "rock":
+                            Console.WriteLine("Rock crushes lizard");
+                            playerTwo.turnWinCounter += 1;
+                            break;
+                        case "paper":
+                            Console.WriteLine("Lizard eats paper");
+                            playerOne.turnWinCounter += 1;
+                            break;
+                        case "scisors":
+                            Console.WriteLine("Scisors decapitate lizard");
+                            playerTwo.turnWinCounter += 1;
+                            break;
+                        case "spok":
+                            Console.WriteLine("Lizard Poisons Spok");
+                            playerOne.turnWinCounter += 1;
+                            break;
+
+                    }
+                    EndGame();
+
                     break;
                 case "rock":
                     Console.WriteLine("case statement works");
+                    switch (playerTwo.turnChoice[0].name)
+                    {
+                        case "lizard":
+                            Console.WriteLine("Rock crushes lizard");
+                            playerOne.turnWinCounter += 1;
+                            ScorePlayers();
+
+                            break;
+                        case "rock":
+                            Console.WriteLine("Try Again");
+                            ScorePlayers();
+                            
+                            break;
+                        case "paper":
+                            Console.WriteLine("Paper covers Rock");
+                            playerTwo.turnWinCounter += 1;
+                            break;
+                        case "scisors":
+                            Console.WriteLine("Rock crushes Scisors");
+                            playerOne.turnWinCounter += 1;
+                            break;
+                        case "spok":
+                            Console.WriteLine("Lizard Poisons Spok");
+                            playerOne.turnWinCounter += 1;
+                            break;
+
+                    }
+                    EndGame();
                     break;
                 case "paper":
                     Console.WriteLine("case statement works");
@@ -204,6 +262,30 @@ namespace RPSLS
 
 
         }
+
+        public void EndGame()
+        {
+            if (playerOne.turnWinCounter >= 3 && playerTwo.turnWinCounter <= 3)
+            {
+                Console.WriteLine($"{playerOne.playerName} wins!");
+                playerOne.RoundWinCounter += 1;
+            }
+            else if(playerTwo.turnWinCounter >= 3 && playerOne.turnWinCounter <= 3)
+            {
+                Console.WriteLine($"{playerTwo.playerName} wins!");
+                playerTwo.RoundWinCounter += 1;
+
+            }
+            else
+            {
+                PlayersTurns();
+            }
+        }
+       
+            
+                
+            
+        
         //public void ChooseItemForPlayerOne()
         //{
         //    if(playerOneInt == 1)
