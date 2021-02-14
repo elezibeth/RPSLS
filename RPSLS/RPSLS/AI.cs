@@ -34,32 +34,32 @@ namespace RPSLS
             ChooseRandomNumber();
             if(ourRandomNumber == 1)
             {
+                turnChoice.Add(spok);
+                Console.WriteLine(playerName + " has chosen spok.");
+
+            }
+            else if (ourRandomNumber == 2)
+            {
                 turnChoice.Add(rock);
                 Console.WriteLine(playerName + " has chosen rock.");
 
             }
-            else if (ourRandomNumber == 2)
+            else if (ourRandomNumber == 3)
             {
                 turnChoice.Add(paper);
                 Console.WriteLine(playerName + " has chosen paper.");
 
             }
-            else if (ourRandomNumber == 3)
+            else if (ourRandomNumber == 4)
             {
                 turnChoice.Add(scisors);
                 Console.WriteLine(playerName + " has chosen scisors.");
 
             }
-            else if (ourRandomNumber == 4)
+            else if (ourRandomNumber == 5)
             {
                 turnChoice.Add(lizard);
                 Console.WriteLine(playerName + " has chosen lizard.");
-
-            }
-            else if (ourRandomNumber == 5)
-            {
-                turnChoice.Add(spok);
-                Console.WriteLine(playerName + " has chosen spok.");
 
             }
             Console.WriteLine(turnChoice[0].name + "is the choice of the computer.");
