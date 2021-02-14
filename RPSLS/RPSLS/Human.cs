@@ -10,7 +10,9 @@ namespace RPSLS
     {
 
         //member variables
-        public string playerName;
+
+        //public int playerInt;
+       
 
 
         //ctor
@@ -26,7 +28,73 @@ namespace RPSLS
         //methods
 
         //chooseitemfromlist
-       
+        public override void MakeGesture()
+        {
+            DisplayListOfItems();
+            VerifyInput();
+
+            
+            AddItemToTurnChoiceList();
+
+        }
+        public void VerifyInput()
+        {
+            Console.WriteLine("Player " + playerName + ", please choose an item from the list.");
+            string input = (Console.ReadLine());
+            playerInt = Convert.ToInt32(input);
+            if(playerInt != 1 && playerInt != 2 && playerInt != 3 && playerInt != 4 && playerInt != 5)
+            {
+                Console.WriteLine("try again");
+                VerifyInput();
+            }
+
+        }
+        public void AddItemToTurnChoiceList()
+        {
+            if (playerInt == 1)
+            {
+                turnChoice.Add(spok);
+                Console.WriteLine(playerName + " has chosen spok.");
+
+            }
+            else if (playerInt == 2)
+            {
+                turnChoice.Add(rock);
+                Console.WriteLine(playerName + " has chosen rock.");
+
+            }
+            else if (playerInt == 3)
+            {
+                turnChoice.Add(paper);
+                Console.WriteLine(playerName + " has chosen paper.");
+
+            }
+            else if (playerInt == 4)
+            {
+                turnChoice.Add(scisors);
+                Console.WriteLine(playerName + " has chosen scisors.");
+
+            }
+            else if (playerInt == 5)
+            {
+                turnChoice.Add(lizard);
+                Console.WriteLine(playerName + " has chosen lizard.");
+
+            }
+         
+
+            
+        }
+        public void DisplayListOfItems()
+        {
+            foreach (Item item in playerListOfItems)
+            {
+                int index = playerListOfItems.IndexOf(item);
+                int indexNumber = index + 1;
+                Console.WriteLine($"{indexNumber} {playerListOfItems[index].name}");
+            }
+            
+        }
 
         
 

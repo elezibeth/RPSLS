@@ -27,8 +27,9 @@ namespace RPSLS
             Console.WriteLine(newGame.roundsRemaining + "rounds remaining.");
 
             AI jane = new AI("Jane");
-            jane.ChooseInteger();
+            
             Console.WriteLine(jane.computerChoice);
+            jane.MakeGesture();
 
             Console.ReadLine();
         }

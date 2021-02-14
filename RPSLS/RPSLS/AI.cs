@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RPSLS
 {
@@ -12,6 +9,7 @@ namespace RPSLS
         public int computerChoice;
         public List<int> oneThruFive;
         int ourRandomNumber;
+        
         
 
 
@@ -31,17 +29,55 @@ namespace RPSLS
 
         // choses 1-5 randomly
         //-- int list
-        public void ChooseInteger()
+        public override void MakeGesture()
+        {
+            ChooseRandomNumber();
+            if(ourRandomNumber == 1)
+            {
+                turnChoice.Add(rock);
+                Console.WriteLine(playerName + " has chosen rock.");
+
+            }
+            else if (ourRandomNumber == 2)
+            {
+                turnChoice.Add(paper);
+                Console.WriteLine(playerName + " has chosen paper.");
+
+            }
+            else if (ourRandomNumber == 3)
+            {
+                turnChoice.Add(scisors);
+                Console.WriteLine(playerName + " has chosen scisors.");
+
+            }
+            else if (ourRandomNumber == 4)
+            {
+                turnChoice.Add(lizard);
+                Console.WriteLine(playerName + " has chosen lizard.");
+
+            }
+            else if (ourRandomNumber == 5)
+            {
+                turnChoice.Add(spok);
+                Console.WriteLine(playerName + " has chosen spok.");
+
+            }
+            Console.WriteLine(turnChoice[0].name + "is the choice of the computer.");
+
+
+
+        }
+
+        public void ChooseRandomNumber()
         {
             Random number = new Random();
             ourRandomNumber = number.Next(1, 5);
             computerChoice = ourRandomNumber;
 
-                
 
         }
 
-        
+
 
 
 
