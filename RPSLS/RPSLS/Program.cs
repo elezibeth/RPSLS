@@ -23,10 +23,13 @@ namespace RPSLS
             newGame.InstantiatePlayers();
             newGame.PlayersTurns();
             newGame.ReturnPlayerScores();
-           
+            
+            
             
 
-           
+
+
+
 
             Console.ReadLine();
         }

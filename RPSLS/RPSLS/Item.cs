@@ -10,13 +10,9 @@ namespace RPSLS
     {
 
         //variables
-        public Item rock;
-        public Item paper;
-        public Item scisors;
-        public Item lizard;
-        public Item spok;
-        public List<Item> itemList;
         public string name;
+       
+ 
 
         //ctor
         public Item(string name)
