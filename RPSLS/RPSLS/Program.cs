@@ -21,15 +21,12 @@ namespace RPSLS
             GamePlay newGame = new GamePlay();
             
             newGame.InstantiatePlayers();
-            newGame.PlayGame();
+            newGame.PlayersTurns();
             newGame.ReturnPlayerScores();
-            Console.WriteLine("player one name:" + newGame.playerOne.playerName + " pplayer two name: " + newGame.playerTwo.playerName);
-            Console.WriteLine(newGame.roundsRemaining + "rounds remaining.");
-
-            AI jane = new AI("Jane");
+           
             
-            Console.WriteLine(jane.computerChoice);
-            jane.MakeGesture();
+
+           
 
             Console.ReadLine();
         }
