@@ -39,10 +39,10 @@ namespace RPSLS
 
       
 
-        public void PlayGame()
-        {
-            PlayersTurns();
-        }
+        //public void PlayGame()
+        //{
+        //    PlayersTurns();
+        //}
        
 
 
@@ -131,17 +131,7 @@ namespace RPSLS
          
         }
 
-        public void DisplayTurnChoices()
-        {
-            foreach (Item x in playerOne.turnChoice)
-            {
-                Console.WriteLine(x.name + " is the choice of player one.");
-            }
-            foreach (Item x in playerTwo.turnChoice)
-            {
-                Console.WriteLine(x.name + " is the choice of player 2.");
-            }
-        }
+     
 
 
         public void ScorePlayers()
@@ -323,12 +313,16 @@ namespace RPSLS
             {
                 Console.WriteLine($"{playerOne.playerName} wins!");
                 playerOne.RoundWinCounter += 1;
+                Console.WriteLine($"{playerOne.playerName} has won {playerOne.RoundWinCounter} rounds.");
+                Console.WriteLine($"{playerTwo.playerName} has won {playerTwo.RoundWinCounter} rounds.");
                 PlayAgain();
             }
             else if(playerTwo.turnWinCounter >= 3 && playerOne.turnWinCounter <= 3)
             {
                 Console.WriteLine($"{playerTwo.playerName} wins!");
                 playerTwo.RoundWinCounter += 1;
+                Console.WriteLine($"{playerOne.playerName} has won {playerOne.RoundWinCounter} rounds.");
+                Console.WriteLine($"{playerTwo.playerName} has won {playerTwo.RoundWinCounter} rounds.");
                 PlayAgain();
 
             }
@@ -350,6 +344,14 @@ namespace RPSLS
                     break;
                 case "2":
                     Console.WriteLine("OK.");
+                    if(playerOne.RoundWinCounter > playerTwo.RoundWinCounter)
+                    {
+                        Console.WriteLine($"{playerOne.playerName} wins more rounds!");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{playerTwo.playerName} wins more rounds!");
+                    }
                     break;
                 default:
                     Console.WriteLine("Not a valid entry");

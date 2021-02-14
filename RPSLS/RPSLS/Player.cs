@@ -59,41 +59,7 @@ namespace RPSLS
 
 
 
-        public void IncrementTurnWinCounter()
-        {
-            turnWinCounter += 1;
-            Console.WriteLine(turnWinCounter);
-        }
-
-        //public void ChooseItemForPlayer()
-        //{
-        //    if (playerInt == 1)
-        //    {
-        //        player.turnChoice.Add(spok);
-        //        Console.WriteLine(playerTwo.turnChoice.Count());
-        //    }
-        //    if (playerInt == 2)
-        //    {
-        //        playerTwo.turnChoice.Add(playerTwo.lizard);
-        //    }
-        //    if (playerInt == 3)
-        //    {
-        //        playerTwo.turnChoice.Add(playerTwo.rock);
-        //    }
-        //    if (playerInt == 4)
-        //    {
-        //        playerTwo.turnChoice.Add(playerTwo.paper);
-        //    }
-        //    if (playerInt == 5)
-        //    {
-        //        playerTwo.turnChoice.Add(playerTwo.scisors);
-
-        //    }
-        //    if (playerInt != 1 && playerTwoInt != 2 && playerTwoInt != 3 && playerTwoInt != 4 && playerTwoInt != 5)
-        //    {
-        //        playerTwo.turnChoice.Add(playerTwo.spok);
-        //        Console.WriteLine("Spok will be  player two's choice");
-        //    }
+    
         }
 
 
