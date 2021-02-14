@@ -30,6 +30,7 @@ namespace RPSLS
         //chooseitemfromlist
         public override void MakeGesture()
         {
+            Console.WriteLine("Player " + playerName + ", please choose an item from the list.");
             DisplayListOfItems();
             VerifyInput();
 
@@ -39,7 +40,7 @@ namespace RPSLS
         }
         public void VerifyInput()
         {
-            Console.WriteLine("Player " + playerName + ", please choose an item from the list.");
+           
             string input = (Console.ReadLine());
             playerInt = Convert.ToInt32(input);
             if(playerInt != 1 && playerInt != 2 && playerInt != 3 && playerInt != 4 && playerInt != 5)
