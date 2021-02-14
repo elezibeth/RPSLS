@@ -110,7 +110,7 @@ namespace RPSLS
         }
         public void ReturnPlayerScores()
         {
-            Console.WriteLine("Player one score: " + playerOne.turnWinCounter + " player two score: " + playerTwo.turnWinCounter);
+            Console.WriteLine($"{playerOne.playerName} score:   {playerOne.turnWinCounter}  {playerTwo.playerName} score:   {playerTwo.turnWinCounter}");
           
         }
 
@@ -121,6 +121,7 @@ namespace RPSLS
             ScorePlayers();
             ClearPlayLists();
             ReturnPlayerScores();
+            Console.WriteLine("--------------------------------------------------------------------------------------");
             EndGame();
         }
         public void ClearPlayLists()
