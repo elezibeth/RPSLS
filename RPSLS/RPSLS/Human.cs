@@ -42,12 +42,18 @@ namespace RPSLS
         {
            
             string input = (Console.ReadLine());
-            playerInt = Convert.ToInt32(input);
-            if(playerInt != 1 && playerInt != 2 && playerInt != 3 && playerInt != 4 && playerInt != 5)
+            if (input != "1" && input != "2" && input != "3" && input != "4" && input != "5")
             {
                 Console.WriteLine("try again");
                 VerifyInput();
             }
+            else
+            {
+                playerInt = Convert.ToInt32(input);
+            }
+            
+           
+            
 
         }
         public void AddItemToTurnChoiceList()
