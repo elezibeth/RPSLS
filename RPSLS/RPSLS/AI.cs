@@ -62,7 +62,7 @@ namespace RPSLS
                 Console.WriteLine(playerName + " has chosen lizard.");
 
             }
-            Console.WriteLine(turnChoice[0].name + "is the choice of the computer.");
+           
 
 
 
