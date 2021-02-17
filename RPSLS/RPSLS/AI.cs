@@ -32,38 +32,42 @@ namespace RPSLS
         public override void MakeGesture()
         {
             ChooseRandomNumber();
-            if(ourRandomNumber == 1)
-            {
-                turnChoice.Add(spok);
-                Console.WriteLine(playerName + " has chosen spok.");
+            
+            turnChoice.Add(playerListOfItems[ourRandomNumber - 1]);
+            Console.WriteLine($"{playerName} has chosen {playerListOfItems[ourRandomNumber - 1].name}.");
 
-            }
-            else if (ourRandomNumber == 2)
-            {
-                turnChoice.Add(rock);
-                Console.WriteLine(playerName + " has chosen rock.");
+            //if (ourRandomNumber == 1)
+            //{
+            //    turnChoice.Add(spok);
+            //    Console.WriteLine(playerName + " has chosen spok.");
 
-            }
-            else if (ourRandomNumber == 3)
-            {
-                turnChoice.Add(paper);
-                Console.WriteLine(playerName + " has chosen paper.");
+            //}
+            //else if (ourRandomNumber == 2)
+            //{
+            //    turnChoice.Add(rock);
+            //    Console.WriteLine(playerName + " has chosen rock.");
 
-            }
-            else if (ourRandomNumber == 4)
-            {
-                turnChoice.Add(scisors);
-                Console.WriteLine(playerName + " has chosen scisors.");
+            //}
+            //else if (ourRandomNumber == 3)
+            //{
+            //    turnChoice.Add(paper);
+            //    Console.WriteLine(playerName + " has chosen paper.");
 
-            }
-            else if (ourRandomNumber == 5)
-            {
-                turnChoice.Add(lizard);
-                Console.WriteLine(playerName + " has chosen lizard.");
+            //}
+            //else if (ourRandomNumber == 4)
+            //{
+            //    turnChoice.Add(scisors);
+            //    Console.WriteLine(playerName + " has chosen rock.");
 
-            }
-           
+            //}
+            //else if (ourRandomNumber == 5)
+            //{
+            //    turnChoice.Add(lizard);
+            //    Console.WriteLine(playerName + " has chosen lizard.");
 
+            //}
+
+            DisplayPlayerList();
 
 
         }
@@ -76,7 +80,15 @@ namespace RPSLS
 
 
         }
-
+        public void DisplayPlayerList()
+        {
+            foreach(Item item in turnChoice)
+            {
+                
+                Console.WriteLine($"turn choice is stored at the index : " +
+                    $"{turnChoice.IndexOf(item)}");
+            }
+        }
 
 
 
